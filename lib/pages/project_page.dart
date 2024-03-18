@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/animations/slide_from_bottom_animation.dart';
 import 'package:portfolio/animations/slide_from_bottom_text_animation.dart';
 import 'package:portfolio/configs/constants.dart';
 
@@ -49,6 +51,17 @@ class ProjectPage extends StatelessWidget {
                 delay: 700,
                 normalColor: mainShade,
               ),
+            ),
+          ),
+          Positioned(
+            top: screenHeight / 2,
+            left: screenWidth / 5,
+            child: Row(
+              children: [
+                SlideUpAnimation(),
+                const SizedBox(width: 20),
+                SlideUpAnimation(),
+              ],
             ),
           )
         ],
