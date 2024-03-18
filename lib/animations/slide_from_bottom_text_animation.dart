@@ -4,8 +4,15 @@ import 'package:portfolio/configs/constants.dart';
 class SlideFromBottomText extends StatefulWidget {
   final String text;
   final int delay;
-  const SlideFromBottomText(
-      {super.key, required this.text, required this.delay});
+  final Color normalColor;
+  final Color hoveredColor;
+  const SlideFromBottomText({
+    super.key,
+    required this.text,
+    required this.delay,
+    this.normalColor = lightShade,
+    this.hoveredColor = subShade,
+  });
 
   @override
   _SlideFromBottomTextState createState() => _SlideFromBottomTextState();
@@ -42,14 +49,14 @@ class _SlideFromBottomTextState extends State<SlideFromBottomText> {
           });
         },
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 500),
+          duration: Duration(milliseconds: widget.delay),
           curve: Curves.easeInOut,
           height: _isVisible ? 0.0 : 100.0,
           alignment: _isVisible ? Alignment.topLeft : const Alignment(-1, 10),
           child: Text(
             widget.text,
             style: navBarTitleText.copyWith(
-              color: _isHovered ? subShade : lightShade,
+              color: _isHovered ? widget.hoveredColor : widget.normalColor,
             ),
           ),
         ),

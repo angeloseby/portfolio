@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/animations/slide_from_bottom_animation.dart';
+import 'package:portfolio/animations/slide_from_bottom_text_animation.dart';
+import 'package:portfolio/animations/slide_from_right_animation.dart';
 import 'package:portfolio/configs/constants.dart';
+import 'package:portfolio/pages/project_page.dart';
 
 class NavigationBarContainer extends StatefulWidget {
   const NavigationBarContainer({super.key});
@@ -52,12 +55,22 @@ class _NavigationBarContainerState extends State<NavigationBarContainer> {
             left: screenWidth / 5,
             child: Column(
               children: [
-                Container(
-                  width: 400,
-                  height: 100,
-                  child: const SlideFromBottomText(
-                    text: "Projects",
-                    delay: 500,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      SlideFromRight(
+                        child: const ProjectPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 400,
+                    height: 100,
+                    child: const SlideFromBottomText(
+                      text: "Projects",
+                      delay: 500,
+                    ),
                   ),
                 ),
                 Container(
