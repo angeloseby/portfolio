@@ -49,7 +49,8 @@ class ProjectPage extends StatelessWidget {
               child: const SlideFromBottomText(
                 text: "Projects",
                 delay: 700,
-                normalColor: mainShade,
+                normalColor: subShade,
+                hoveredColor: mainShade,
               ),
             ),
           ),

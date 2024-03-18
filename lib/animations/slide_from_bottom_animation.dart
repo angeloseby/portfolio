@@ -35,7 +35,7 @@ class _SlideUpAnimationState extends State<SlideUpAnimation>
                 color: lightShade,
                 borderRadius: BorderRadius.circular(25),
                 border: Border.all(
-                  color: mainShade,
+                  color: subShade,
                   width: 2.0,
                 )),
           );
