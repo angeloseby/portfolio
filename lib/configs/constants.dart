@@ -28,3 +28,9 @@ TextStyle navBarClose = GoogleFonts.poppins(
   color: lightShade,
   fontWeight: FontWeight.w400,
 );
+
+TextStyle navBarTitleText = GoogleFonts.poppins(
+  fontSize: 60,
+  color: lightShade,
+  fontWeight: FontWeight.bold,
+);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/animations/slide_from_bottom_animation.dart';
 import 'package:portfolio/configs/constants.dart';
-import 'package:portfolio/widgets/bottom_driver.dart';
 
 class NavigationBarContainer extends StatefulWidget {
   const NavigationBarContainer({super.key});
@@ -46,10 +47,37 @@ class _NavigationBarContainerState extends State<NavigationBarContainer> {
               ),
             ),
           ),
-          const Positioned(
-            bottom: 0,
-            left: 0,
-            child: BottomRectangleDriver(),
+          Positioned(
+            top: screenHeight / 3.5,
+            left: screenWidth / 5,
+            child: Column(
+              children: [
+                Container(
+                  width: 400,
+                  height: 100,
+                  child: const SlideFromBottomText(
+                    text: "Projects",
+                    delay: 500,
+                  ),
+                ),
+                Container(
+                  width: 400,
+                  height: 100,
+                  child: const SlideFromBottomText(
+                    text: "Education",
+                    delay: 600,
+                  ),
+                ),
+                Container(
+                  width: 400,
+                  height: 100,
+                  child: const SlideFromBottomText(
+                    text: "Resume",
+                    delay: 700,
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
